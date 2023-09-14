@@ -47,7 +47,12 @@ function App() {
     setFavourites(newFavouriteList);
   };
 
-  
+  const removeFavouriteMovie= (movie)=>{
+   const newFavouriteList= favourites.filter(
+     (favourite)=>favourite.imdbID!== movie.imdbID
+   );
+   setFavourites(newFavouriteList);
+  };
 
   return (
     <div className="container-fluid movie-app">
@@ -67,7 +72,7 @@ function App() {
       <div className="row" style={{ overflowY: 'scroll', maxHeight: '70vh' }}>
         <MovieList
           movies={favourites}
-          handleFavouritesClick={addFavouriteMovie}
+          handleFavouritesClick={removeFavouriteMovie}
           favouriteComponent={RemoveFavourites}
         />
       </div>
