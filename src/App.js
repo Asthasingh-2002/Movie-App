@@ -45,7 +45,7 @@ function App() {
   }, [searchValue]);
 
   const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=b2739912`;
+    const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=b2739912`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -58,7 +58,7 @@ function App() {
   };
 
   const getDefaultMovieList = async () => {
-    const url = `http://www.omdbapi.com/?s=new&apikey=b2739912`;
+    const url = `https://www.omdbapi.com/?s=new&apikey=b2739912`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
