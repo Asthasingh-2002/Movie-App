@@ -1,12 +1,25 @@
 body {
   background: #141414;
   color: #ffffff;
+  margin-right: 10px;
 }
 
-.movie-app>.row {
-  overflow: auto;
-  flex-wrap: nowrap;
+body::-webkit-scrollbar {
+  width: 10px;
+}
 
+body::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+#root {
+  padding-bottom: 30px;
+}
+
+.movie-app > .row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .image-container {
@@ -14,6 +27,7 @@ body {
   transition: transform 0.2s;
   flex-shrink: 1;
   width: auto;
+  height: 55vh;
 }
 
 .row::-webkit-scrollbar {
@@ -32,13 +46,12 @@ body {
 .overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
-  width: 93%;
+  width: 90%;
   transition: 0.5s ease;
   bottom: 0;
-  font-size: 20px;
-  padding: 20;
+  font-size: 15px;
   text-align: center;
-  display: none;
+  border-bottom: 2px solid grey;
 }
 
 .ratings {
@@ -46,7 +59,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-  padding: 20px
+  padding: 10px;
 }
 
 .ratings svg {
@@ -55,7 +68,7 @@ body {
 }
 
 .btn-primary {
-  color: yellow;
+  color: white;
   width: 20%;
   background: black;
   border: none;
@@ -63,8 +76,8 @@ body {
 
 .btn-primary:hover,
 .btn-primary:active {
-  color: yellow;
-  background-color: black;
+  color: white !important;
+  background-color: black !important;
 }
 
 .feedback-container {
@@ -73,7 +86,7 @@ body {
   top: 100%;
   padding: 10px;
   background: black;
-  width: 93%;
+  width: 90%;
 }
 
 .commentsField {
@@ -82,9 +95,35 @@ body {
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
+  overflow: hidden;
+  word-break: break-all;
+}
 
+.commentsField:disabled {
+  background-color: black;
+  color: white;
 }
 
 .commentsField::placeholder {
-  color: lightgray;
+  color: lightgrey;
+}
+
+.modal-content {
+  width: 50vw;
+}
+
+.bi-trash3:hover,
+.bi-heart-fill:hover {
+  color: red;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 0;
+  display: block;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 2px;
 }
